@@ -165,7 +165,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/tr_manager"
+                android:id="@+id/tr_task"
                 android:layout_marginVertical="5dp"
                 android:visibility="gone">
 
@@ -173,7 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="@string/clients"
+                    android:text="task"
                     android:textSize="16sp" />
 
                 <EditText
@@ -186,49 +186,6 @@
                     android:textSize="16sp" />
             </TableRow>
 
-            <TableRow
-                android:id="@+id/tr_tester"
-                android:layout_marginVertical="5dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/bugs"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#576F6E6E"
-                    android:hint="@string/number"
-                    android:padding="5dp"
-                    android:textSize="16sp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_programmer"
-                android:layout_marginVertical="5dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/projects"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#576F6E6E"
-                    android:hint="@string/number"
-                    android:padding="5dp"
-                    android:textSize="16sp" />
-            </TableRow>
 
             <TableRow android:layout_marginVertical="5dp">
 
@@ -241,28 +198,23 @@
 
                 <RadioGroup
 
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
+                        android:layout_weight="0.5"
+                        android:text="@string/car"
+                        android:textSize="16sp" />
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="@string/car"
-                            android:textSize="16sp" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="@string/motorbike"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/motorbike"
+                        android:textSize="16sp" />
                 </RadioGroup>
             </TableRow>
 
@@ -302,28 +254,23 @@
 
                 <RadioGroup
 
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
+                        android:layout_weight="0.5"
+                        android:text="@string/yes"
+                        android:textSize="16sp" />
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="@string/yes"
-                            android:textSize="16sp" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="@string/no"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/no"
+                        android:textSize="16sp" />=
                 </RadioGroup>
             </TableRow>
 
