@@ -22,4 +22,9 @@ public class Employee {
 
         this.age = currentYear - birthYear;
     }
+
+    public double annualIncome(){
+        return (monthlySalary * 12) * rate;
+    }
+
 }
