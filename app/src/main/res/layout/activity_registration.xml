@@ -13,348 +13,376 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Registration Form"
+        android:text="@string/registration_form"
         android:textSize="22sp" />
 
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/btn_register"
         android:layout_below="@id/tv_header"
-        android:layout_marginVertical="20dp">
+        android:scrollbars="none">
 
-        <TableRow android:layout_marginVertical="5dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Employee First Name"
-                android:textSize="18sp" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="20dp">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="first name"
-                android:padding="5dp" />
-        </TableRow>
+            <TableRow android:layout_marginVertical="5dp">
 
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Employee Last Name"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="last name"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Employee Birth Year"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="birth year"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Monthly Salary"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="monthly salary"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Occupation Rate"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="occupation rate"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Employee ID"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="employee id"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Employee Type"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:entries="@array/employee_types"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tr_manager"
-            android:layout_marginVertical="5dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="# clients"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="number"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tr_tester"
-            android:layout_marginVertical="5dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="# bugs"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="number"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tr_programmer"
-            android:layout_marginVertical="5dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="# projects"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="number"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Vehicle"
-                android:textSize="18sp" />
-
-            <RadioGroup
-
-                android:layout_weight="1">
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_marginRight="5dp"
+                    android:text="@string/emp_first_name"
+                    android:textSize="16sp" />
 
-                    <RadioButton
-                        android:layout_weight="0.5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Car" />
-
-                    <RadioButton
-                        android:layout_weight="0.5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Motorbike" />
-                </LinearLayout>
-            </RadioGroup>
-        </TableRow>
-
-        <TableRow
-            android:visibility="gone"
-            android:layout_marginVertical="5dp"
-            android:id="@+id/tr_car_type">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Car Type"
-                android:textSize="18sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="Car Type"
-                android:padding="5dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tr_sidecar"
-            android:visibility="gone"
-            android:layout_marginVertical="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Side Car"
-                android:textSize="18sp" />
-
-            <RadioGroup
-
-                android:layout_weight="1">
-
-                <LinearLayout
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/first_name"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
 
-                    <RadioButton
-                        android:layout_weight="0.5"
-                        android:layout_width="wrap_content"
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emp_last_name"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/last_name"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emp_birth_year"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/birth_year"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/monthly_salary"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/monthly_salary"
+                    android:padding="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/occupation_rate"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/occupation_rate"
+                    android:padding="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/emp_id"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/emp_id"
+                    android:padding="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/emp_type"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/employee_types"
+
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_manager"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/clients"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/number"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_tester"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/bugs"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/number"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_programmer"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/projects"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/number"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/vehicle"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Yes" />
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                    <RadioButton
-                        android:layout_weight="0.5"
-                        android:layout_width="wrap_content"
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/car"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/motorbike"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_car_type"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/car_type"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/car_type"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_sidecar"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Side Car"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="No" />
-                </LinearLayout>
-            </RadioGroup>
-        </TableRow>
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-        <TableRow android:layout_marginVertical="5dp">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/yes"
+                            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Vehicle Model"
-                android:textSize="18sp" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/no"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </RadioGroup>
+            </TableRow>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="model"
-                android:padding="5dp" />
-        </TableRow>
-        <TableRow android:layout_marginVertical="5dp">
+            <TableRow android:layout_marginVertical="5dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Plate Number"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/vehicle_model"
+                    android:textSize="16sp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#576F6E6E"
-                android:hint="plate number"
-                android:padding="5dp" />
-        </TableRow>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/model"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
 
-        <TableRow android:layout_marginVertical="5dp">
+            <TableRow android:layout_marginVertical="5dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Vehicle Color"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/plate_number"
+                    android:textSize="16sp" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:entries="@array/colors"
-                />
-        </TableRow>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#576F6E6E"
+                    android:hint="@string/plate_number"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
+            </TableRow>
 
-    </TableLayout>
+            <TableRow android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/vehicle_color"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/colors" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_register"
@@ -362,5 +390,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="10dp"
-        android:text="Register" />
+        android:text="@string/register" />
+
 </RelativeLayout>
