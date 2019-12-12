@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Harman_C0765590_FP</string>
+
+    <string-array name="employee_types">
+        <item>Choose a type</item>
+        <item>Manager</item>
+        <item>Tester</item>
+        <item>Programmer</item>
+    </string-array>
+
+    <string-array name="colors">
+        <item>Choose a color</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Pink</item>
+        <item>Brown</item>
+        <item>White</item>
+        <item>Black</item>
+        <item>Beige</item>
+    </string-array>
+</resources>

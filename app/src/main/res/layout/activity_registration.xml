@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Registration Form"
+        android:textSize="22sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_register"
+        android:layout_below="@id/tv_header"
+        android:layout_marginVertical="20dp">
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Employee First Name"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="first name"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Employee Last Name"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="last name"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Employee Birth Year"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="birth year"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Monthly Salary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="monthly salary"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Occupation Rate"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="occupation rate"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Employee ID"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="employee id"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Employee Type"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/employee_types"
+
+                />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr_manager"
+            android:layout_marginVertical="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="# clients"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="number"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr_tester"
+            android:layout_marginVertical="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="# bugs"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="number"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr_programmer"
+            android:layout_marginVertical="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="# projects"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="number"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Vehicle"
+                android:textSize="18sp" />
+
+            <RadioGroup
+
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:layout_weight="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Car" />
+
+                    <RadioButton
+                        android:layout_weight="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Motorbike" />
+                </LinearLayout>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:visibility="gone"
+            android:layout_marginVertical="5dp"
+            android:id="@+id/tr_car_type">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Car Type"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="Car Type"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr_sidecar"
+            android:visibility="gone"
+            android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Side Car"
+                android:textSize="18sp" />
+
+            <RadioGroup
+
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:layout_weight="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:layout_weight="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </LinearLayout>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Vehicle Model"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="model"
+                android:padding="5dp" />
+        </TableRow>
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Plate Number"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#576F6E6E"
+                android:hint="plate number"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Vehicle Color"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/colors"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="10dp"
+        android:text="Register" />
+</RelativeLayout>
