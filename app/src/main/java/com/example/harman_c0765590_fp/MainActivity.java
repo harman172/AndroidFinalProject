@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btn_add);
         listView = findViewById(R.id.emp_list);
 
-        EmployeeAdapter employeeAdapter = new EmployeeAdapter(this, R.layout.adapter_employee,employeeList);
+        EmployeeAdapter employeeAdapter = new EmployeeAdapter(this,employeeList);
         listView.setAdapter(employeeAdapter);
 
 

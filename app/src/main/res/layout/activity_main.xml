@@ -11,6 +11,7 @@
         android:id="@+id/emp_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_above="@+id/btn_add"
         android:layout_marginVertical="20dp"/>
 
