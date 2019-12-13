@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
             employeeAdapter.notifyDataSetChanged();
 
         }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
 
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
