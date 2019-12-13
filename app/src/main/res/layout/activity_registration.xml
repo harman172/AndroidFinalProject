@@ -40,6 +40,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_firstname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -58,6 +59,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_lastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -76,6 +78,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_birthyear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -95,6 +98,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_salary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,6 +119,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_rate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -135,6 +140,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -155,6 +161,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
+                    android:id="@+id/spinner_emp_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,11 +172,12 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/tr_task"
+                android:id="@+id/tr_work"
                 android:layout_marginVertical="5dp"
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/tv_emp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -177,6 +185,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -198,21 +207,26 @@
 
                 <RadioGroup
 
+                    android:id="@+id/rg_vehicle_type"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
 
                     <RadioButton
+                        android:id="@+id/rb_car"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
+                        android:onClick="vehicleSelected"
                         android:text="@string/car"
                         android:textSize="16sp" />
 
                     <RadioButton
+                        android:id="@+id/rb_motorbike"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
+                        android:onClick="vehicleSelected"
                         android:text="@string/motorbike"
                         android:textSize="16sp" />
                 </RadioGroup>
@@ -231,6 +245,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_car_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -253,12 +268,13 @@
                     android:textSize="16sp" />
 
                 <RadioGroup
-
+                    android:id="@+id/rg_sidecar"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
 
                     <RadioButton
+                        android:id="@+id/rb_sidecar_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
@@ -266,11 +282,12 @@
                         android:textSize="16sp" />
 
                     <RadioButton
+                        android:id="@+id/rb_sidecar_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="@string/no"
-                        android:textSize="16sp" />=
+                        android:textSize="16sp" />
                 </RadioGroup>
             </TableRow>
 
@@ -284,6 +301,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_vehicle_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -303,6 +321,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/et_plate_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -322,6 +341,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
+                    android:id="@+id/spinner_color"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -337,6 +357,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="10dp"
+        android:onClick="onRegistration"
         android:text="@string/register" />
 
 </RelativeLayout>
