@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(employeeAdapter);
 
 
-        Intent intent = getIntent();
-        Employee employee = (Employee) intent.getSerializableExtra("empDetails");
+        final Intent intent = getIntent();
+        final Employee employee = (Employee) intent.getSerializableExtra("empDetails");
 
         if (employee != null){
             employeeList.add(employee);
@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Log.i("Details", "onItemClick: " + employeeList.get(position).toString());
+                Intent empDetailsIntent = new Intent(MainActivity.this, EmployeeDetailsActivity.class);
+                empDetailsIntent.putExtra("details", employeeList.get(position).toString());
+                startActivity(empDetailsIntent);
             }
         });
 

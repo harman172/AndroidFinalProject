@@ -22,7 +22,7 @@ public class Tester extends Employee {
     @Override
     public String toString() {
         String str = ", a Tester \nAge: " + getAge() + "\n" +
-                "Employee has a " + getVehicle().toString() +
+                getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
                 "Annual Income: $" + annualIncome() + "\n" +
                 "He/She has corrected " + nbBugs+ " bugs";

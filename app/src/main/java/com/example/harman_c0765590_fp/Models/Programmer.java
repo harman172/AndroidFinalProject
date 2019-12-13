@@ -23,7 +23,7 @@ public class Programmer extends Employee {
     @Override
     public String toString() {
         String str = ", a Programmer\nAge: " + getAge() + "\n" +
-                "Employee has a " + getVehicle().toString() +
+                getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
                 "Annual Income: $" + annualIncome() + "\n" +
                 "He/She has completed " + nbProjects+ " projects";

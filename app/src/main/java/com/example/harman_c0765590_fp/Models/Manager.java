@@ -24,7 +24,7 @@ public class Manager extends Employee {
     @Override
     public String toString() {
         String str = ", a Manager \nAge: " + getAge() + "\n" +
-                "Employee has a " + getVehicle().toString() +
+                getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
                 "Annual Income: $" + annualIncome() + "\n" +
                 "He/She has brought " + nbClients+ " new clients";
