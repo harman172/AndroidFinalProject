@@ -2,7 +2,9 @@ package com.example.harman_c0765590_fp.Models;
 
 import androidx.annotation.NonNull;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable {
     private String model, plateNumber, color;
 
     public Vehicle(String model, String plateNumber, String color) {

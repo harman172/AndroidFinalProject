@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -136,10 +135,10 @@ public class RegistrationActivity extends AppCompatActivity {
         Employee emp = getData();
         Log.i("Register", "onRegistration: " + emp.toString());
 
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("empDetails", emp);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("empDetails", emp);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
 
     }
 
