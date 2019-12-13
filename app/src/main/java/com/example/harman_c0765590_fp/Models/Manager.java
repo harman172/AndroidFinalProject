@@ -1,5 +1,7 @@
 package com.example.harman_c0765590_fp.Models;
 
+import androidx.annotation.NonNull;
+
 public class Manager extends Employee {
 
     private int nbClients;
@@ -16,5 +18,16 @@ public class Manager extends Employee {
     public double annualIncome() {
         double income = super.annualIncome();
         return (income + (nbClients * GAIN_FACTOR_CLIENT));
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        String str = ", a Manager \nAge: " + getAge() + "\n" +
+                "Employee has a " + getVehicle().toString() +
+                "Occupation rate: " + getRate() + "%\n" +
+                "Annual Income: $" + annualIncome() + "\n" +
+                "He/She has brought " + nbClients+ " new clients";
+        return super.toString() + str;
     }
 }

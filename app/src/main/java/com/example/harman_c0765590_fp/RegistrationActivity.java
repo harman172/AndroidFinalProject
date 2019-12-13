@@ -72,7 +72,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
-    public void getData(){
+    public Employee getData(){
 
         String fName = etFirstName.getText().toString();
         String lName = etLastName.getText().toString();
@@ -112,30 +112,34 @@ public class RegistrationActivity extends AppCompatActivity {
         long empType = spinnerEmpType.getSelectedItemId();
         Log.i("empType", "onClick: " + empType);
 
-        Employee employee;
+        Employee employee = new Employee("","",0,0,0,null);
 
         if (empType == 1){
             employee = new Manager(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-            Employee.employeeList.add(employee);
+
+//            Employee.employeeList.add(employee);
         }
         else if (empType == 2){
             employee = new Tester(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-            Employee.employeeList.add(employee);
+//            Employee.employeeList.add(employee);
         }
         else if (empType == 3){
             employee = new Programmer(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-            Employee.employeeList.add(employee);
+//            Employee.employeeList.add(employee);
         }
 
+        return employee;
     }
 
     public void onRegistration(View view){
 
-        getData();
+        Employee emp = getData();
+        Log.i("Register", "onRegistration: " + emp.toString());
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        intent.putExtra("empDetails", emp);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        startActivity(intent);
 
     }
 

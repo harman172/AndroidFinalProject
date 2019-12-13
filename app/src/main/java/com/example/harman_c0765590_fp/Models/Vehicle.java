@@ -1,5 +1,7 @@
 package com.example.harman_c0765590_fp.Models;
 
+import androidx.annotation.NonNull;
+
 public class Vehicle {
     private String model, plateNumber, color;
 
@@ -7,6 +9,12 @@ public class Vehicle {
         this.model = model;
         this.plateNumber = plateNumber;
         this.color = color;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Employee has a ";
     }
 
     public String getModel() {

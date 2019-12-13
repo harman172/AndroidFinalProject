@@ -1,11 +1,14 @@
 package com.example.harman_c0765590_fp.Models;
 
 
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class Employee {
+public class Employee implements Serializable {
     private String empName, empID;
     private int birthYear, age;
     private float monthlySalary, rate;
@@ -15,7 +18,7 @@ public class Employee {
 
     int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
-    public static ArrayList<Employee> employeeList = new ArrayList<>();
+//    public static ArrayList<Employee> employeeList = new ArrayList<>();
 
 
     public Employee(String empName, String empID, int birthYear, float monthlySalary, float rate, Vehicle vehicle) {
@@ -33,6 +36,11 @@ public class Employee {
         return (monthlySalary * 12) * rate;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "Name: " + empName;
+    }
 
     public String getEmpName() {
         return empName;
