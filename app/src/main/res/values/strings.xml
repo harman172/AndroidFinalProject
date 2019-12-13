@@ -31,6 +31,8 @@
     <string name="model">model</string>
 
     <string name="register">Register</string>
+    <string name="name">Name: </string>
+    <string name="id">Id:</string>
 
     <string-array name="employee_types">
         <item>Choose a type</item>
