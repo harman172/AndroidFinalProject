@@ -14,7 +14,7 @@ public class Programmer extends Employee {
 
     @Override
     public double annualIncome() {
-        double income =  super.annualIncome();
+        double income = super.annualIncome();
         return (income + (nbProjects * GAIN_FACTOR_PROJECTS));
     }
 
@@ -25,8 +25,8 @@ public class Programmer extends Employee {
         String str = ", a Programmer\nAge: " + getAge() + "\n" +
                 getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
-                "Annual Income: $" + String.format("%.2f",annualIncome()) + "\n" +
-                "He/She has completed " + nbProjects+ " projects";
+                "Annual Income: $" + String.format("%.2f", annualIncome()) + "\n" +
+                "He/She has completed " + nbProjects + " projects";
         return super.toString() + str;
     }
 }

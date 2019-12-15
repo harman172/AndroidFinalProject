@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private EmployeeAdapter employeeAdapter;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.emp_list);
         final EditText etSearch = findViewById(R.id.et_search);
 
-        employeeAdapter = new EmployeeAdapter(this,employeeList);
+        employeeAdapter = new EmployeeAdapter(this, employeeList);
         listView.setAdapter(employeeAdapter);
 
 
         final Intent intent = getIntent();
         final Employee employee = (Employee) intent.getSerializableExtra("empDetails");
 
-        if (employee != null){
+        if (employee != null) {
             employeeList.add(employee);
             employeeAdapter.notifyDataSetChanged();
 
@@ -53,15 +52,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-
-
-                Log.i("Details", "onItemClick: " + employeeList.get(position).toString());
                 Intent empDetailsIntent = new Intent(MainActivity.this, EmployeeDetailsActivity.class);
 
-                if (!etSearch.getText().toString().isEmpty()){
+                if (!etSearch.getText().toString().isEmpty()) {
                     empDetailsIntent.putExtra("details", searchList.get(position).toString());
-                } else{
+                } else {
                     empDetailsIntent.putExtra("details", employeeList.get(position).toString());
                 }
 
@@ -91,19 +86,17 @@ public class MainActivity extends AppCompatActivity {
                 searchList = new ArrayList<>();
 
                 String text = s.toString();
-                if(s.length() != 0){
+                if (s.length() != 0) {
 
-                    for (Employee employee: employeeList){
-                        if(employee.getEmpName().startsWith(text)){
-                            
+                    for (Employee employee : employeeList) {
+                        if (employee.getEmpName().startsWith(text)) {
+
                             searchList.add(employee);
                         }
                     }
-
-                } else{
+                } else {
                     searchList.addAll(employeeList);
                 }
-
 
                 employeeAdapter.setSearchList(searchList);
                 employeeAdapter.notifyDataSetChanged();

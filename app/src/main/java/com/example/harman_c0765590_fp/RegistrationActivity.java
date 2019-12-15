@@ -33,6 +33,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView tvEmp;
     private TableRow trWork, trCarType, trSideCar;
 
+    private String fName, lName, empID, vehicleModel, plateNumber, color;
+    private int birthYear, number;
+    private float salary, rate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +48,17 @@ public class RegistrationActivity extends AppCompatActivity {
         spinnerEmpType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position > 0){
+                if (position > 0) {
                     trWork.setVisibility(View.VISIBLE);
 
-                    if (position == 1){
+                    if (position == 1) {
                         tvEmp.setText("# clients");
-                    } else if (position == 2){
+                    } else if (position == 2) {
                         tvEmp.setText("# bugs");
-                    } else if (position == 3){
+                    } else if (position == 3) {
                         tvEmp.setText("# projects");
                     }
-                } else{
+                } else {
                     trWork.setVisibility(View.GONE);
                 }
             }
@@ -68,15 +71,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    public void onRegistration(View view) {
 
-//                if (birthYear > 1900 && birthYear < Employee.currentYear) {
-//if (salary >= 0) {
-//    if (rate >= 10 && rate <= 100) {
-
-    public void onRegistration(View view){
-
-        if (emptyFieldValidations()){
-            if (inputValidations()){
+        if (emptyFieldValidations()) {
+            if (inputValidations()) {
 
                 Employee emp = getData();
 
@@ -85,16 +83,15 @@ public class RegistrationActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
-        } else{
+        } else {
             Toast.makeText(this, "All fields are required.", Toast.LENGTH_SHORT).show();
         }
 
 
-
     }
 
-    public void vehicleSelected(View view){
-        switch (view.getId()){
+    public void vehicleSelected(View view) {
+        switch (view.getId()) {
             case R.id.rb_car:
                 trCarType.setVisibility(View.VISIBLE);
                 trSideCar.setVisibility(View.GONE);
@@ -105,7 +102,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
-    private void getIDs(){
+    private void getIDs() {
 
         etFirstName = findViewById(R.id.et_firstname);
         etLastName = findViewById(R.id.et_lastname);
@@ -131,52 +128,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
-    String fName, lName, empID, vehicleModel, plateNumber, color;
-    int birthYear, number;
-    float salary, rate;
-
-    public Employee getData(){
-
-        Vehicle selectedVehicle = new Vehicle(vehicleModel, plateNumber, color);
-
-        switch (vehicleType.getCheckedRadioButtonId()){
-
-            case R.id.rb_car:
-
-                String carType = etCarType.getText().toString();
-                selectedVehicle = new Car(vehicleModel,plateNumber,color,carType);
-                break;
-
-            case R.id.rb_motorbike:
-
-                if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_yes){
-                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, true);
-                } else if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_no){
-                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, false);
-                }
-
-                break;
-        }
-
-        long empType = spinnerEmpType.getSelectedItemId();
-
-        Employee employee = new Employee("","",0,0,0,null);
-
-        if (empType == 1){
-            employee = new Manager(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-
-        }
-        else if (empType == 2){
-            employee = new Tester(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-        }
-        else if (empType == 3){
-            employee = new Programmer(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-        }
-
-        return employee;
-    }
-
-    private void getEditTextsData(){
+    private void getEditTextsData() {
         fName = etFirstName.getText().toString();
         lName = etLastName.getText().toString();
         birthYear = Integer.valueOf(etBirthYear.getText().toString());
@@ -191,15 +143,55 @@ public class RegistrationActivity extends AppCompatActivity {
         color = spinnerColor.getSelectedItem().toString();
     }
 
-    private boolean emptyFieldValidations(){
+    private Employee getData() {
+
+        Vehicle selectedVehicle = new Vehicle(vehicleModel, plateNumber, color);
+
+        switch (vehicleType.getCheckedRadioButtonId()) {
+
+            case R.id.rb_car:
+
+                String carType = etCarType.getText().toString();
+                selectedVehicle = new Car(vehicleModel, plateNumber, color, carType);
+                break;
+
+            case R.id.rb_motorbike:
+
+                if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_yes) {
+                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, true);
+                } else if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_no) {
+                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, false);
+                }
+
+                break;
+        }
+
+        long empType = spinnerEmpType.getSelectedItemId();
+
+        Employee employee = new Employee("", "", 0, 0, 0, null);
+
+        if (empType == 1) {
+            employee = new Manager(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+
+        } else if (empType == 2) {
+            employee = new Tester(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+        } else if (empType == 3) {
+            employee = new Programmer(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+        }
+
+        return employee;
+    }
+
+
+    private boolean emptyFieldValidations() {
 
         boolean isValid = false;
 
         if (!etFirstName.getText().toString().isEmpty()) {
             if (!etLastName.getText().toString().isEmpty()) {
-                if (!etBirthYear.getText().toString().isEmpty()){
-                    if (!etMonthlySalary.getText().toString().isEmpty()){
-                        if (!etRate.getText().toString().isEmpty()){
+                if (!etBirthYear.getText().toString().isEmpty()) {
+                    if (!etMonthlySalary.getText().toString().isEmpty()) {
+                        if (!etRate.getText().toString().isEmpty()) {
                             if (!etEmpID.getText().toString().isEmpty()) {
 
                                 if (spinnerEmpType.getSelectedItemPosition() > 0) {
@@ -245,9 +237,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         boolean alreadyExists = false;
 
-        if (MainActivity.employeeList.size() > 0){
-            for (int i=0; i< MainActivity.employeeList.size(); i++){
-                if (MainActivity.employeeList.get(i).getEmpID().equals(empID)){
+        if (MainActivity.employeeList.size() > 0) {
+            for (int i = 0; i < MainActivity.employeeList.size(); i++) {
+                if (MainActivity.employeeList.get(i).getEmpID().equals(empID)) {
                     alreadyExists = true;
                     break;
                 }
@@ -256,9 +248,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if (birthYear > 1900 && birthYear < Employee.currentYear) {
             if (rate >= 10 && rate <= 100) {
-                if (!alreadyExists){
+                if (!alreadyExists) {
                     return true;
-                } else{
+                } else {
                     makeToast("ID already exists. Try another.");
                     return false;
                 }
@@ -266,13 +258,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 makeToast("Occupation rate must be between 10 and 100");
                 return false;
             }
-        } else{
+        } else {
             makeToast("Birth year must be between 1900 and " + Employee.currentYear);
             return false;
         }
     }
 
-    private void makeToast(String message){
+    private void makeToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

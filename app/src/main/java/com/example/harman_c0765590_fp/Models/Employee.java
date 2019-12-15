@@ -32,7 +32,7 @@ public class Employee implements Serializable {
         this.age = currentYear - birthYear;
     }
 
-    public double annualIncome(){
+    public double annualIncome() {
         return (monthlySalary * 12) * rate;
     }
 

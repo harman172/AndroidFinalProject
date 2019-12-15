@@ -26,7 +26,7 @@ public class EmployeeAdapter extends BaseAdapter {
         this.employeeList = employeeList;
     }
 
-    public void setSearchList(List<Employee> searchList){
+    public void setSearchList(List<Employee> searchList) {
         this.employeeList = searchList;
     }
 
@@ -48,8 +48,8 @@ public class EmployeeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.adapter_employee,null);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.adapter_employee, null);
         }
         TextView tvName = convertView.findViewById(R.id.tv_name);
         TextView tvID = convertView.findViewById(R.id.tv_id);

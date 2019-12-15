@@ -19,7 +19,7 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String details = intent.getExtras().getString("details");
 
-        Log.i("Details", "onCreate: " + details);
+//        Log.i("Details", "onCreate: " + details);
         textView.setText(details);
     }
 }
