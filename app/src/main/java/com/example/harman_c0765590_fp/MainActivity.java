@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                     for (Employee employee: employeeList){
                         if(employee.getEmpName().startsWith(text)){
-                            Log.i("Search", "onTextChanged: YEs");
+                            
                             searchList.add(employee);
                         }
                     }

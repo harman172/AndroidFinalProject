@@ -82,9 +82,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="number"
                     android:background="#576F6E6E"
                     android:hint="@string/birth_year"
+                    android:inputType="number"
                     android:padding="5dp"
                     android:textSize="16sp" />
             </TableRow>
@@ -103,9 +103,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal"
                     android:background="#576F6E6E"
                     android:hint="@string/monthly_salary"
+                    android:inputType="numberDecimal"
                     android:padding="5dp"
                     android:textAllCaps="false"
                     android:textSize="16sp" />
@@ -125,9 +125,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal"
                     android:background="#576F6E6E"
                     android:hint="@string/occupation_rate"
+                    android:inputType="numberDecimal"
                     android:padding="5dp"
                     android:textAllCaps="false"
                     android:textSize="16sp" />
@@ -192,9 +192,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="number"
                     android:background="#576F6E6E"
                     android:hint="@string/number"
+                    android:inputType="number"
                     android:padding="5dp"
                     android:textSize="16sp" />
             </TableRow>

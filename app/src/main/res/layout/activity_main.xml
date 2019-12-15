@@ -8,25 +8,27 @@
 
     <LinearLayout
         android:id="@+id/ll_search"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_alignParentTop="true"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="5dp">
+
         <ImageView
-            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_search"/>
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_search" />
+
         <EditText
+            android:id="@+id/et_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search here..."
-            android:textSize="18sp"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/et_search"/>
+            android:layout_marginRight="10dp"
+            android:hint="Search here..."
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -35,16 +37,16 @@
         android:id="@+id/emp_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll_search"
         android:layout_above="@+id/btn_add"
-        android:layout_marginVertical="20dp"/>
+        android:layout_below="@id/ll_search"
+        android:layout_marginVertical="20dp" />
 
     <Button
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"
         android:layout_alignParentBottom="true"
-        android:padding="20dp"/>
+        android:padding="20dp"
+        android:text="Add" />
 
 </RelativeLayout>
