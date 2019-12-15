@@ -17,6 +17,7 @@ import java.util.List;
 
 public class EmployeeAdapter extends BaseAdapter {
 
+
     private Context context;
     private List<Employee> employeeList;
 
@@ -24,6 +25,11 @@ public class EmployeeAdapter extends BaseAdapter {
         this.context = context;
         this.employeeList = employeeList;
     }
+
+    public void setSearchList(List<Employee> searchList){
+        this.employeeList = searchList;
+    }
+
 
     @Override
     public int getCount() {
