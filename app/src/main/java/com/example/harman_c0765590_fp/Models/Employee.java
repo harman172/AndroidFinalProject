@@ -16,7 +16,7 @@ public class Employee implements Serializable {
 
     //arraylist
 
-    int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+    public static int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
 //    public static ArrayList<Employee> employeeList = new ArrayList<>();
 

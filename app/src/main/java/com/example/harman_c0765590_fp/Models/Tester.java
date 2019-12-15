@@ -24,7 +24,7 @@ public class Tester extends Employee {
         String str = ", a Tester \nAge: " + getAge() + "\n" +
                 getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
-                "Annual Income: $" + annualIncome() + "\n" +
+                "Annual Income: $" + String.format("%.2f",annualIncome()) + "\n" +
                 "He/She has corrected " + nbBugs+ " bugs";
         return super.toString() + str;
     }

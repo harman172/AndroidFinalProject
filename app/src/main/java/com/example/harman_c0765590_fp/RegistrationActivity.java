@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.harman_c0765590_fp.Models.Car;
 import com.example.harman_c0765590_fp.Models.Employee;
@@ -28,7 +29,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText etFirstName, etLastName, etBirthYear, etMonthlySalary, etRate, etEmpID, etNumber;
     private EditText etCarType, etModel, etPlateNumber;
     private RadioGroup vehicleType, rgSideCar;
-    private RadioButton rbCar, rbMotorbike, rbYes, rbNo;
     private Spinner spinnerEmpType, spinnerColor;
     private TextView tvEmp;
     private TableRow trWork, trCarType, trSideCar;
@@ -41,7 +41,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         getIDs();
-
 
         spinnerEmpType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -67,78 +66,30 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
-    public Employee getData(){
 
-        String fName = etFirstName.getText().toString();
-        String lName = etLastName.getText().toString();
-        int birthYear = Integer.valueOf(etBirthYear.getText().toString());
-        float salary = Float.valueOf(etMonthlySalary.getText().toString());
-        float rate = Float.valueOf(etRate.getText().toString());
-        String empID = etEmpID.getText().toString();
-
-        int number = Integer.valueOf(etNumber.getText().toString());
-
-
-        String vehicleModel = etModel.getText().toString();
-        String plateNumber = etPlateNumber.getText().toString();
-        String color = spinnerColor.getSelectedItem().toString();
-
-        Vehicle selectedVehicle = new Vehicle(vehicleModel, plateNumber, color);
-
-        switch (vehicleType.getCheckedRadioButtonId()){
-
-            case R.id.rb_car:
-
-                String carType = etCarType.getText().toString();
-                selectedVehicle = new Car(vehicleModel,plateNumber,color,carType);
-                break;
-
-            case R.id.rb_motorbike:
-
-                if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_yes){
-                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, true);
-                } else if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_no){
-                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, false);
-                }
-
-                break;
-        }
-
-        long empType = spinnerEmpType.getSelectedItemId();
-        Log.i("empType", "onClick: " + empType);
-
-        Employee employee = new Employee("","",0,0,0,null);
-
-        if (empType == 1){
-            employee = new Manager(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-
-//            Employee.employeeList.add(employee);
-        }
-        else if (empType == 2){
-            employee = new Tester(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-//            Employee.employeeList.add(employee);
-        }
-        else if (empType == 3){
-            employee = new Programmer(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
-//            Employee.employeeList.add(employee);
-        }
-
-        return employee;
-    }
+//                if (birthYear > 1900 && birthYear < Employee.currentYear) {
+//if (salary >= 0) {
+//    if (rate >= 10 && rate <= 100) {
 
     public void onRegistration(View view){
 
-        Employee emp = getData();
-        Log.i("Register", "onRegistration: " + emp.toString());
+        if (emptyFieldValidations()){
+            if (inputValidations()){
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("empDetails", emp);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+                Employee emp = getData();
+
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("empDetails", emp);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        } else{
+            Toast.makeText(this, "All fields are required.", Toast.LENGTH_SHORT).show();
+        }
+
+
 
     }
 
@@ -170,11 +121,6 @@ public class RegistrationActivity extends AppCompatActivity {
         vehicleType = findViewById(R.id.rg_vehicle_type);
         rgSideCar = findViewById(R.id.rg_sidecar);
 
-        rbCar = findViewById(R.id.rb_car);
-        rbMotorbike = findViewById(R.id.rb_motorbike);
-        rbYes = findViewById(R.id.rb_sidecar_yes);
-        rbNo = findViewById(R.id.rb_sidecar_no);
-
         spinnerEmpType = findViewById(R.id.spinner_emp_type);
         spinnerColor = findViewById(R.id.spinner_color);
 
@@ -184,4 +130,165 @@ public class RegistrationActivity extends AppCompatActivity {
         trSideCar = findViewById(R.id.tr_sidecar);
 
     }
+
+    String fName, lName, empID, vehicleModel, plateNumber, color;
+    int birthYear, number;
+    float salary, rate;
+
+    public Employee getData(){
+
+        Vehicle selectedVehicle = new Vehicle(vehicleModel, plateNumber, color);
+
+        switch (vehicleType.getCheckedRadioButtonId()){
+
+            case R.id.rb_car:
+
+                String carType = etCarType.getText().toString();
+                selectedVehicle = new Car(vehicleModel,plateNumber,color,carType);
+                break;
+
+            case R.id.rb_motorbike:
+
+                if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_yes){
+                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, true);
+                } else if (rgSideCar.getCheckedRadioButtonId() == R.id.rb_sidecar_no){
+                    selectedVehicle = new Motorbike(vehicleModel, plateNumber, color, false);
+                }
+
+                break;
+        }
+
+        long empType = spinnerEmpType.getSelectedItemId();
+
+        Employee employee = new Employee("","",0,0,0,null);
+
+        if (empType == 1){
+            employee = new Manager(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+
+        }
+        else if (empType == 2){
+            employee = new Tester(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+        }
+        else if (empType == 3){
+            employee = new Programmer(fName + " " + lName, empID, birthYear, salary, rate, selectedVehicle, number);
+        }
+
+        return employee;
+    }
+
+    private void getEditTextsData(){
+        fName = etFirstName.getText().toString();
+        lName = etLastName.getText().toString();
+        birthYear = Integer.valueOf(etBirthYear.getText().toString());
+        salary = Float.valueOf(etMonthlySalary.getText().toString());
+        rate = Float.valueOf(etRate.getText().toString());
+        empID = etEmpID.getText().toString();
+
+        number = Integer.valueOf(etNumber.getText().toString());
+
+        vehicleModel = etModel.getText().toString();
+        plateNumber = etPlateNumber.getText().toString();
+        color = spinnerColor.getSelectedItem().toString();
+    }
+
+    private boolean emptyFieldValidations(){
+
+        boolean isValid = false;
+
+        if (!etFirstName.getText().toString().isEmpty()) {
+            if (!etLastName.getText().toString().isEmpty()) {
+                if (!etBirthYear.getText().toString().isEmpty()){
+                    if (!etMonthlySalary.getText().toString().isEmpty()){
+                        if (!etRate.getText().toString().isEmpty()){
+                            if (!etEmpID.getText().toString().isEmpty()) {
+
+                                if (spinnerEmpType.getSelectedItemPosition() > 0) {
+                                    if (!etNumber.getText().toString().isEmpty()) {
+
+                                        if (vehicleType.getCheckedRadioButtonId() != -1) {
+
+                                            if (!etModel.getText().toString().isEmpty()) {
+                                                if (!etPlateNumber.getText().toString().isEmpty()) {
+                                                    if (spinnerColor.getSelectedItemPosition() > 0) {
+
+                                                        if (trCarType.getVisibility() == View.VISIBLE) {
+                                                            if (!etCarType.getText().toString().isEmpty()) {
+
+                                                                isValid = true;
+                                                            }
+                                                        } else if (trSideCar.getVisibility() == View.VISIBLE) {
+                                                            if (rgSideCar.getCheckedRadioButtonId() != -1) {
+
+                                                                isValid = true;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return isValid;
+
+    }
+
+    private boolean inputValidations() {
+
+        getEditTextsData();
+
+        boolean alreadyExists = false;
+
+        if (MainActivity.employeeList.size() > 0){
+            for (int i=0; i< MainActivity.employeeList.size(); i++){
+                if (MainActivity.employeeList.get(i).getEmpID().equals(empID)){
+                    alreadyExists = true;
+                    break;
+                }
+            }
+        }
+
+        if (birthYear > 1900 && birthYear < Employee.currentYear) {
+            if (rate >= 10 && rate <= 100) {
+                if (!alreadyExists){
+                    return true;
+                } else{
+                    makeToast("ID already exists. Try another.");
+                    return false;
+                }
+            } else {
+                makeToast("Occupation rate must be between 10 and 100");
+                return false;
+            }
+        } else{
+            makeToast("Birth year must be between 1900 and " + Employee.currentYear);
+            return false;
+        }
+    }
+
+    private void makeToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

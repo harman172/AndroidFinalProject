@@ -51,7 +51,6 @@ public class EmployeeAdapter extends BaseAdapter {
         tvName.setText(employeeList.get(position).getEmpName());
         tvID.setText(employeeList.get(position).getEmpID());
 
-
         return convertView;
     }
 }

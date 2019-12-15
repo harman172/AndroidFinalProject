@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnAdd;
     private ListView listView;
-    private static List<Employee> employeeList = new ArrayList<>();
+    public static List<Employee> employeeList = new ArrayList<>();
 
 
 

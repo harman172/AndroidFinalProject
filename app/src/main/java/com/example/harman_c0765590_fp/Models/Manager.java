@@ -26,7 +26,7 @@ public class Manager extends Employee {
         String str = ", a Manager \nAge: " + getAge() + "\n" +
                 getVehicle().toString() +
                 "Occupation rate: " + getRate() + "%\n" +
-                "Annual Income: $" + annualIncome() + "\n" +
+                "Annual Income: $" + String.format("%.2f",annualIncome()) + "\n" +
                 "He/She has brought " + nbClients+ " new clients";
         return super.toString() + str;
     }
