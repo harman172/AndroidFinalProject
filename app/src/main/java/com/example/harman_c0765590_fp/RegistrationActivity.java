@@ -43,8 +43,11 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
 
+        //get IDs of all views in layout.
         getIDs();
 
+
+        //changes input field depending upon employee type selected.
         spinnerEmpType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -71,6 +74,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    // registration button clicked
     public void onRegistration(View view) {
 
         if (emptyFieldValidations()) {
@@ -90,6 +94,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    //changes layout based uopn selected vehicle.
+
     public void vehicleSelected(View view) {
         switch (view.getId()) {
             case R.id.rb_car:
@@ -102,6 +108,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    // get IDs of required views in layout.
     private void getIDs() {
 
         etFirstName = findViewById(R.id.et_firstname);
@@ -128,6 +135,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    // gets data from edittexts.
     private void getEditTextsData() {
         fName = etFirstName.getText().toString();
         lName = etLastName.getText().toString();
@@ -143,6 +151,8 @@ public class RegistrationActivity extends AppCompatActivity {
         color = spinnerColor.getSelectedItem().toString();
     }
 
+
+    // returns an employee object based upon vehicle and employee type chosen.
     private Employee getData() {
 
         Vehicle selectedVehicle = new Vehicle(vehicleModel, plateNumber, color);
@@ -182,6 +192,8 @@ public class RegistrationActivity extends AppCompatActivity {
         return employee;
     }
 
+
+    // validate data for all the fields.
 
     private boolean emptyFieldValidations() {
 

@@ -14,12 +14,9 @@ public class Employee implements Serializable {
     private float monthlySalary, rate;
     private Vehicle vehicle;
 
-    //arraylist
-
     public static int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
 //    public static ArrayList<Employee> employeeList = new ArrayList<>();
-
 
     public Employee(String empName, String empID, int birthYear, float monthlySalary, float rate, Vehicle vehicle) {
         this.empName = empName;
@@ -32,6 +29,7 @@ public class Employee implements Serializable {
         this.age = currentYear - birthYear;
     }
 
+    //to calculate annual income of an employee
     public double annualIncome() {
         return (monthlySalary * 12) * rate;
     }
@@ -42,6 +40,8 @@ public class Employee implements Serializable {
         return "Name: " + empName;
     }
 
+
+    //getters
     public String getEmpName() {
         return empName;
     }

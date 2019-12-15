@@ -21,10 +21,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static List<Employee> employeeList = new ArrayList<>();
+
+    // list to get searched employees
     private List<Employee> searchList;
 
     private EmployeeAdapter employeeAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,15 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.emp_list);
         final EditText etSearch = findViewById(R.id.et_search);
 
+        //setting adapter
         employeeAdapter = new EmployeeAdapter(this, employeeList);
         listView.setAdapter(employeeAdapter);
 
 
-        final Intent intent = getIntent();
-        final Employee employee = (Employee) intent.getSerializableExtra("empDetails");
+        // intent from RegistrationActivity.
+
+        Intent intent = getIntent();
+        Employee employee = (Employee) intent.getSerializableExtra("empDetails");
 
         if (employee != null) {
             employeeList.add(employee);
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        // item click in listview.
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -55,8 +60,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent empDetailsIntent = new Intent(MainActivity.this, EmployeeDetailsActivity.class);
 
                 if (!etSearch.getText().toString().isEmpty()) {
+
+                    //when user is searching data from original list.
                     empDetailsIntent.putExtra("details", searchList.get(position).toString());
                 } else {
+
+                    //no text in search field by user.
                     empDetailsIntent.putExtra("details", employeeList.get(position).toString());
                 }
 
@@ -73,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //handles data searched from list.
 
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override

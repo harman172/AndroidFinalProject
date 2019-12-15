@@ -18,7 +18,6 @@ public class Programmer extends Employee {
         return (income + (nbProjects * GAIN_FACTOR_PROJECTS));
     }
 
-
     @NonNull
     @Override
     public String toString() {

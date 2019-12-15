@@ -16,10 +16,10 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.tv_details);
 
+        // intent from MainActivity.
+
         Intent intent = getIntent();
         String details = intent.getExtras().getString("details");
-
-//        Log.i("Details", "onCreate: " + details);
         textView.setText(details);
     }
 }

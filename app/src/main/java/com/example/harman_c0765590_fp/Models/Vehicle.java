@@ -19,6 +19,9 @@ public class Vehicle implements Serializable {
         return "Employee has a ";
     }
 
+
+    //getters
+
     public String getModel() {
         return model;
     }
